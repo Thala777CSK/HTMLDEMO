@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile JQuery</title>
+    
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+    <div data-role="page" id="page1">
+        <div data-role="header">
+        <h1> Grid System </h1>
+        </div>
+        <fieldset class="ui-grid-a">
+                <div class="ui-block-a" style="margin-top: 20px;"><input id="b1" type="button" value="Division 1" data-theme="a"></div>
+                <div class="ui-block-b"><input id="b2" type="button" value="Division 2" data-theme="a"></div>
+        </fieldset>
+        <div class="data-role" style="margin: 30px;">
+        <label for="slider-fill"><b>Student Count:</b></label>
+        <input  type="range" name="slider-fill" id="slider-fill" value="60" min="0" max="100" data-highlight="true">
+        </div>
+        
+        <div data-role="content">
+            <a href="#panelArea" class="ui-btn">Open Panel</a>
+        </div>
+
+        <div data-role="panel" id="panelArea" data-display="overlay" data-position="left">
+            <p>Hello world</p>
+        </div>
+       
+        <fieldset data-role="controlgroup">
+            <legend><b>Choose Fav Language:</b></legend>
+                 <input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
+                 <label for="radio-choice-1">Java</label>
+        
+                 <input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"  />
+                 <label for="radio-choice-2">C++</label>
+        
+                 <input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3"  />
+                 <label for="radio-choice-3">Python</label>
+        
+                 <input type="radio" name="radio-choice-1" id="radio-choice-4" value="choice-4"  />
+                 <label for="radio-choice-4">JavaScript</label>
+        </fieldset>
+
+        <a href="#DialogBox" data-rel="popup" 
+        data-position-to="window" data-transition="pop"
+        class="ui-btn ui-corner-all ui-shadow ui-btn-inline  
+        ui-icon-delete ui-btn-icon-left ui-btn-a"> 
+        Open DialogBox
+        </a>
+
+        <div data-role="popup" id="DialogBox" 
+            data-overlay-theme="b" data-theme="b" 
+            data-dismissible="false"
+            style="max-width:400px;"> 
+              
+            <div data-role="header" data-theme="a"> 
+                <h1>Dialog Box</h1> 
+            </div> 
+              
+            <div role="main" class="ui-content"> 
+                <h3 class="ui-title"> 
+                    This is TE IT Division Page. 
+                </h3> 
+                  
+                <a href="#" class="ui-btn ui-corner-all  
+                    ui-shadow ui-btn-inline ui-btn-b"  
+                    data-rel="back">close 
+                </a> 
+            </div> 
+        </div> 
+
+        <div data-role="footer">
+            <h1> Grid System </h1>
+        </div>
+    </div>
+    <script> 
+        $("#b1").click(function(){
+            alert("Division 1");
+        });
+        $("#b2").click(function(){
+            alert("Division 2");
+        });
+        $(document).ready(function(){
+            $("#slider-fill").on('slidechange', function () { 
+                var a=$("#slider-fill").slider("value"); 
+                if(a>80)
+                {
+                    alert("DIvision Full");
+                }
+            }) 
+        });
+        $(function () { 
+            $("#slider-fill").slider(); 
+           
+        });
+    </script>
+</body>
+</html>
